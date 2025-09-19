@@ -1,0 +1,132 @@
+\documentclass[12pt,a4paper]{article}
+
+% ---------- Packages ----------
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+% ---------- Header/Footer ----------
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Bus Stops}
+\cfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+% ---------- Document ----------
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Bus Stops}} \\[0.5em]
+    {Problem ID: bus} \\[1em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem Statement}
+A school bus travels along a straight road with $N$ bus stops, numbered from $1$ to $N$.  
+At each stop:
+\begin{itemize}
+    \item First, some students get off the bus.  
+    \item Then, some students get on the bus.  
+\end{itemize}
+
+The bus starts empty before stop $1$. Your task is to determine the \textbf{maximum number of students on the bus at any time}.
+
+In some subtasks, additional rules apply (such as bus capacity). Read the constraints carefully.
+
+\section*{Input}
+\begin{itemize}
+    \item The first line contains an integer $N$ ($1 \leq N \leq 1000$), the number of bus stops.  
+    \item The second line contains $N$ integers $\text{on}_1, \text{on}_2, \ldots, \text{on}_N$ ($0 \leq \text{on}_i \leq 10^4$),  
+    where $\text{on}_i$ is the number of students boarding at stop $i$.  
+    \item The third line contains $N$ integers $\text{off}_1, \text{off}_2, \ldots, \text{off}_N$ ($0 \leq \text{off}_i \leq 10^4$),  
+    where $\text{off}_i$ is the number of students getting off at stop $i$.  
+    \item The fourth line contains an integer $C$, the bus capacity.  
+    For subtasks where no capacity restriction applies, $C$ will be very large (e.g.\ $10^9$), so it does not affect the result.  
+\end{itemize}
+
+\section*{Output}
+Print a single integer: the maximum number of students on the bus at any point in time.  
+In subtasks requiring the stop index, print two integers:  
+\texttt{max\_students stop\_index}.
+
+\section*{Constraints and Subtasks}
+\begin{center}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\textbf{Subtask} & \textbf{Constraints / Additional Rules} & \textbf{Points} \\
+\hline
+1 & $N \leq 3$, $\text{on}_i, \text{off}_i \leq 10$, $C = 10^9$ & 10 \\
+\hline
+2 & $N \leq 100$, $\text{on}_i, \text{off}_i \leq 100$, $C = 10^9$ & 20 \\
+\hline
+3 & $N \leq 1000$, $\text{on}_i, \text{off}_i \leq 10^4$, $C = 10^9$ & 20 \\
+\hline
+4 & Same as Subtask 3, but $C \leq 10^4$. If more students attempt to board than seats available, only as many as possible get on. The rest are left behind permanently. & 30 \\
+\hline
+5 & Same as Subtask 3. Additionally, print the \textbf{first stop index} at which the maximum occupancy occurs. Output format: two integers, \texttt{max\_students stop\_index}. & 20 \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section*{Sample Input 1}
+\begin{verbatim}
+5
+0 3 4 0 2
+0 0 2 3 4
+1000000000
+\end{verbatim}
+
+\section*{Sample Output 1}
+\begin{verbatim}
+5
+\end{verbatim}
+
+\section*{Explanation for Sample 1}
+\begin{itemize}
+  \item Stop 1: 0 off, 0 on → 0  
+  \item Stop 2: 0 off, 3 on → 3  
+  \item Stop 3: 2 off, 4 on → 5  
+  \item Stop 4: 3 off, 0 on → 2  
+  \item Stop 5: 4 off, 2 on → 0  
+\end{itemize}
+
+Maximum = 5.
+
+\section*{Sample Input 2 (Capacity Example)}
+\begin{verbatim}
+4
+5 5 5 5
+0 0 0 0
+8
+\end{verbatim}
+
+\section*{Sample Output 2}
+\begin{verbatim}
+8
+\end{verbatim}
+
+\section*{Explanation for Sample 2}
+\begin{itemize}
+  \item Stop 1: 5 board → 5  
+  \item Stop 2: 5 try to board, but capacity is 8 → 3 board, 2 left behind → total = 8  
+  \item Stops 3 and 4: bus remains full at 8  
+\end{itemize}
+
+Maximum = 8.
+
+\vfill
+\begin{center}
+    \rule{0.8\textwidth}{0.4pt} \\[0.5em]
+    \textit{End of Problem A}
+\end{center}
+
+\end{document}

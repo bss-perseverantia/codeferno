@@ -1,0 +1,125 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Perseverantia 2025}
+\cfoot{\thepage}
+
+\lstset{
+  basicstyle=\ttfamily\small,
+  frame=single,
+  breaklines=true,
+  showstringspaces=false,
+  tabsize=2,
+  numbers=left,
+  numberstyle=\tiny,
+  keywordstyle=\color{blue},
+  commentstyle=\color{gray},
+  stringstyle=\color{brown}
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Sample Problem Statement}} \\[0.5em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{Introduction}
+This document contains an example of a problem that might appear in Codeferno.  
+It is provided to help you get familiar with the problem format, input/output style, subtasks, and solutions in different programming languages (C, C++, Python, and Java).  
+
+\section*{Problem A: Sum of Two Numbers}
+You are given two integers $a$ and $b$. Your task is to compute their sum.
+
+\subsection*{Input}
+Two integers $a$ and $b$.
+
+\subsection*{Output}
+Output a single integer, the value of $a+b$.
+
+\subsection*{Constraints}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
+\hline
+1 & $-10^9 \leq a, b \leq 10^9$ & 30 \\
+\hline
+2 & $-10^{18} \leq a, b \leq 10^{18}$ & 70 \\
+\hline
+\end{tabular}
+
+\subsection*{Sample Input}
+\begin{verbatim}
+5 7
+\end{verbatim}
+
+\subsection*{Sample Output}
+\begin{verbatim}
+12
+\end{verbatim}
+
+\section*{Solutions}
+
+\subsection*{C (filename: any .c file)}
+\begin{lstlisting}[language=C]
+#include <stdio.h>
+
+int main() {
+  long long a, b;
+  scanf("%lld %lld", &a, &b);
+  printf("%lld\n", a + b);
+}
+\end{lstlisting}
+
+\subsection*{C++ (filename: any .cpp file)}
+\begin{lstlisting}[language=C++]
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+  long long a, b;
+  cin >> a >> b;
+  cout << a + b << "\n";
+}
+\end{lstlisting}
+
+\subsection*{Python (filename: any .py file)}
+\begin{lstlisting}[language=Python]
+a, b = map(int, input().split())
+print(a + b)
+\end{lstlisting}
+
+\subsection*{Java (filename: A.java)}
+\begin{lstlisting}[language=Java]
+import java.util.*;
+
+public class A {
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    long a = sc.nextLong();
+    long b = sc.nextLong();
+    System.out.println(a + b);
+  }
+}
+\end{lstlisting}
+
+\section*{Notes}
+\begin{itemize}
+    \item In C, C++, and Python, the filename does not matter.  
+    \item In Java, the filename must match the problem ID.  
+For example, for this problem (Problem A), the file should be named \texttt{A.java}.  
+    \item Always follow the input/output format strictly. Do not add prompts or extra text.  
+\end{itemize}
+
+\end{document}

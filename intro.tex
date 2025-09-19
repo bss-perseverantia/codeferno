@@ -1,0 +1,110 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Perseverantia 2025}
+\cfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\tcbset{
+  mybox/.style={
+    colback=gray!5,
+    colframe=black,
+    boxrule=0.4pt,
+    sharp corners,
+    left=6pt,
+    right=6pt,
+    top=6pt,
+    bottom=6pt
+  }
+}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Welcome to Codeferno}} \\[0.5em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{General Information}
+\begin{itemize}[leftmargin=1.5em]
+    \item Contest Website: \texttt{192.xxx.xxx.xxx:[port]}  
+    \item Duration: \textbf{90 minutes}
+\end{itemize}
+
+\section*{Rules \& Guidelines}
+\begin{enumerate}[leftmargin=1.5em]
+    \item You may use \textbf{C / C++ / Java / Python}.
+    \item For Java: 
+    \begin{itemize}
+        \item The filename must be the \textbf{problem ID}. Example: \texttt{A.java}.
+        \item Always include \texttt{public static void main(String[] args)}.
+    \end{itemize}
+    \item Do \emph{not} print prompts such as \texttt{"Enter n:"}.
+    \item Follow the input/output format in the problem statement \textbf{exactly}.  
+    Any deviation will cause your submission to fail.  
+    \begin{tcolorbox}[mybox]
+    For example: If the problem specifies output as  
+    \begin{verbatim}
+    1 2 3 4 5
+    \end{verbatim}  
+    and you print  
+    \begin{verbatim}
+    1
+    2
+    3
+    4
+    5
+    \end{verbatim}  
+    your answer will be marked wrong.
+    \end{tcolorbox}
+    \item The exact required format will always be clearly specified in each problem.
+\end{enumerate}
+
+\section*{Scoring}
+\begin{itemize}[leftmargin=1.5em]
+    \item Each problem carries a certain number of points.  
+    \item Partial scoring will be given for passing some subtasks.  
+    \item Ties are broken by \textbf{time of last correct submission}.  
+\end{itemize}
+
+\section*{Allowed References}
+\begin{itemize}[leftmargin=1.5em]
+    \item Documentation provided locally during the contest:  
+    \begin{itemize}
+        \item Python: \texttt{[TODO link]}
+        \item C: \texttt{[TODO link]}
+        \item C++: \texttt{[TODO link]}
+        \item Java: \texttt{[TODO link]}
+    \end{itemize}
+    \item You may freely refer to these official docs during the contest.  
+\end{itemize}
+
+\section*{Prohibited Actions}
+\begin{itemize}[leftmargin=1.5em]
+    \item No internet access is allowed.  
+    \item Do \textbf{not} attempt to Google or consult any other online source.  
+    \item Do \textbf{not} attempt to use AI language models or external tools to solve the problems.  
+    \item Any violation will result in disqualification.  
+\end{itemize}
+
+\vfill
+\begin{center}
+    \rule{0.8\textwidth}{0.4pt} \\[0.5em]
+    \textit{Good luck; may the best coder win!}
+\end{center}
+
+\end{document}

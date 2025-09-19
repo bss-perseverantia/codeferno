@@ -1,0 +1,27 @@
+name: "Codeferno"
+description: "Perseverantia 2025's coding contest"
+tasks:
+  - "bus"
+users:
+- username: P6
+  password: ChAdP6!2025
+  ip: null
+- username: P3
+  password: BillMulP3#2025
+  ip: null
+- username: P7
+  password: BScottP7@2025
+  ip: null
+- username: P12
+  password: JMLP12$2025
+  ip: null
+- username: P9
+  password: HFS_P9%2025
+  ip: null
+- username: P22
+  password: ManeckP22&2025
+  ip: null
+- username: P18
+  password: EuroP18*2025
+  ip: null
+token_mode: disabled
