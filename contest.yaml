@@ -3,6 +3,8 @@ description: "Perseverantia 2025's coding contest"
 tasks:
   - "bus"
 users:
+- username: avighna
+  password: laira
 - username: P6
   password: ChAdP6!2025
   ip: null

@@ -1,6 +1,5 @@
 \documentclass[12pt,a4paper]{article}
 
-% ---------- Packages ----------
 \usepackage[margin=1in]{geometry}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
@@ -9,7 +8,6 @@
 \usepackage{xcolor}
 \usepackage{tabularx}
 
-% ---------- Header/Footer ----------
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{Codeferno}
@@ -19,7 +17,6 @@
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
 
-% ---------- Document ----------
 \begin{document}
 
 \begin{center}
@@ -58,11 +55,11 @@ Print a single integer: the maximum number of students on the bus at any point i
 In subtasks requiring the stop index, print two integers:  
 \texttt{max\_students stop\_index}.
 
-\section*{Constraints and Subtasks}
+\section*{Subtasks}
 \begin{center}
 \begin{tabularx}{\textwidth}{|c|X|c|}
 \hline
-\textbf{Subtask} & \textbf{Constraints / Additional Rules} & \textbf{Points} \\
+\textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
 \hline
 1 & $N \leq 3$, $\text{on}_i, \text{off}_i \leq 10$, $C = 10^9$ & 10 \\
 \hline
@@ -101,7 +98,7 @@ In subtasks requiring the stop index, print two integers:
 
 Maximum = 5.
 
-\section*{Sample Input 2 (Capacity Example)}
+\section*{Sample Input 2 (capacity example)}
 \begin{verbatim}
 4
 5 5 5 5
@@ -123,10 +120,36 @@ Maximum = 5.
 
 Maximum = 8.
 
+\section*{Sample Input 3 (stop index example)}
+\begin{verbatim}
+6
+2 4 0 2 0 0
+0 0 2 0 1 4
+1000000000
+\end{verbatim}
+
+\section*{Sample Output 3}
+\begin{verbatim}
+6 2
+\end{verbatim}
+
+\section*{Explanation for Sample 3}
+\begin{itemize}
+  \item Stop 1: 2 board → 2  
+  \item Stop 2: 4 board → 6  
+  \item Stop 3: 2 off → 4  
+  \item Stop 4: 2 on → 6  
+  \item Stop 5: 1 off → 5  
+  \item Stop 6: 4 off → 1  
+\end{itemize}
+
+Maximum = 6 at stop 2, but maximum \textbf{after} that is 6 at stop 4.  
+Since the first maximum is at stop 2, output is \texttt{6 2}.  
+
 \vfill
 \begin{center}
     \rule{0.8\textwidth}{0.4pt} \\[0.5em]
-    \textit{End of Problem A}
+    \textit{End of Problem 1}
 \end{center}
 
 \end{document}
