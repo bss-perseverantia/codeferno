@@ -14,7 +14,7 @@ Contract:
 int main(int argc, char *argv[]) {
   if (argc < 4) {
     cerr << "Usage: checker <in> <out> <user_out>\n";
-    printf("0.0\n");
+    cout << "0.0\n";
     return 0;
   }
 
@@ -24,17 +24,19 @@ int main(int argc, char *argv[]) {
 
   if (!fin || !fans || !fout) {
     cerr << "File open error\n";
-    printf("0.0\n");
+    cout << "0.0\n";
     return 0;
   }
 
   int N;
   fin >> N;
   vector<int> on(N), off(N);
-  for (int i = 0; i < N; i++)
+  for (int i = 0; i < N; i++) {
     fin >> on[i];
-  for (int i = 0; i < N; i++)
+  }
+  for (int i = 0; i < N; i++) {
     fin >> off[i];
+  }
   long long C;
   fin >> C;
 
@@ -43,14 +45,14 @@ int main(int argc, char *argv[]) {
 
   long long user_max;
   if (!(fout >> user_max)) {
-    cerr << "Contestant output missing first number\n";
-    printf("0.0\n");
+    cerr << "Output missing first number\n";
+    cout << "0.0\n";
     return 0;
   }
 
   if (user_max != correct_max) {
-    cerr << "Expected max=" << correct_max << " but got " << user_max << "\n";
-    printf("0.0\n");
+    cerr << "Answer isn't correct\n";
+    cout << "0.0\n";
     return 0;
   }
 
@@ -59,19 +61,17 @@ int main(int argc, char *argv[]) {
     long long user_index;
     if (!(fout >> user_index)) {
       cerr << "Expected an index in output\n";
-      printf("0.0\n");
+      cout << "0.0\n";
       return 0;
     }
     if (user_index != correct_index) {
-      cerr << "Expected index=" << correct_index
-           << " but got " << user_index << "\n";
-      printf("0.0\n");
+      cerr << "Answer isn't correct\n";
+      cout << "0.0\n";
       return 0;
     }
   }
 
-  // If we reach here, everything matched
-  cerr << "Output correct\n";
-  printf("1.0\n");
+  cerr << "Output is correct\n";
+  cout << "0.0\n";
   return 0;
 }

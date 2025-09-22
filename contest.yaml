@@ -2,6 +2,8 @@ name: "Codeferno"
 description: "Perseverantia 2025's coding contest"
 tasks:
   - "bus"
+  - "expo"
+  - "tree"
 users:
 - username: avighna
   password: laira
