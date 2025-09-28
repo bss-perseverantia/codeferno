@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Neighbours}
+\cfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\ifdefined\BOOKLET
+  \pagestyle{empty}
+\fi
+
+\begin{center}
+    {\LARGE \textbf{Neighbours}} \\[0.5em]
+    {Problem ID: neighbours} \\[1em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem Statement}
+There are $N$ houses built along a straight road.  
+The position of the $i$-th house is given by an integer $x_i$.  
+The houses are listed in order from left to right ($x_1 < x_2 < \cdots < x_N$).  
+
+Your task is to find the \textbf{minimum distance} between any two neighbouring houses.
+
+\section*{Input}
+\begin{itemize}
+    \item The first line contains an integer $N$ ($2 \leq N \leq 1000$), the number of houses.  
+    \item The second line contains $N$ integers $x_1, x_2, \ldots, x_N$ ($0 \leq x_i \leq 10^6$),  
+    the positions of the houses. It is guaranteed that $x_1 < x_2 < \cdots < x_N$.  
+\end{itemize}
+
+\section*{Output}
+Print a single integer: the minimum distance between two neighbouring houses.
+
+\section*{Subtasks}
+\begin{center}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
+\hline
+1 & We will only test the provided sample inputs. & 10 \\
+\hline
+2 & $N \leq 100$, $x_i \leq 1000$ & 30 \\
+\hline
+3 & $N \leq 1000$, $x_i \leq 10^6$ & 60 \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section*{Sample Input 1}
+\begin{verbatim}
+5
+1 4 7 12 14
+\end{verbatim}
+
+\section*{Sample Output 1}
+\begin{verbatim}
+2
+\end{verbatim}
+
+\section*{Explanation for Sample 1}
+The gaps between neighbours are:  
+$4-1=3$, $7-4=3$, $12-7=5$, $14-12=2$.  
+The minimum is $2$.
+
+\section*{Sample Input 2}
+\begin{verbatim}
+4
+10 20 25 40
+\end{verbatim}
+
+\section*{Sample Output 2}
+\begin{verbatim}
+5
+\end{verbatim}
+
+\section*{Explanation for Sample 2}
+The gaps are $10$, $5$, and $15$.  
+The minimum is $5$.
+
+\vfill
+\begin{center}
+    \rule{0.8\textwidth}{0.4pt} \\[0.5em]
+    \textit{End of Problem 1}
+\end{center}
+
+\end{document}

@@ -1,0 +1,146 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Offthentic Feed}
+\cfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\ifdefined\BOOKLET
+  \pagestyle{empty}
+\fi
+
+\begin{center}
+    {\LARGE \textbf{Offthentic Feed}} \\[0.5em]
+    {Problem ID: feed} \\[1em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem Statement}
+You are building a new social media platform called \textbf{Offthentic}. Users post content continuously, and the platform must display a live feed of posts.  
+
+There are $n$ posts. Each post $i$ has three attributes:
+\begin{itemize}
+    \item $u_i$ — the user ID of the author,  
+    \item $t_i$ — the timestamp when the post was created (seconds since the start),  
+    \item $l_i$ — the number of likes the post has.  
+\end{itemize}
+
+The feed has the following rules:
+\begin{itemize}
+    \item At each second, all posts created up to that time are available.  
+    \item The feed displays at most $k$ posts at a time.  
+    \item Posts are ranked by:
+        \begin{enumerate}
+            \item Higher likes ($l_i$),  
+            \item Later timestamp ($t_i$),  
+            \item Smaller user ID ($u_i$).  
+        \end{enumerate}
+    \item When a new post enters the feed, it may push out an older one. Once a post leaves the feed, it does not reappear later.  
+\end{itemize}
+
+It is guaranteed that no two posts have identical $(u_i, t_i)$ pairs, so ties are always resolvable.  
+
+Your task is to simulate the feed and output the order in which posts first appeared.  
+\textbf{Note:} Some posts may never appear if they are always out-ranked.
+
+\section*{Input}
+\begin{itemize}
+    \item The first line contains two integers $n$ and $k$ ($1 \leq n, k \leq 10^5$).  
+    \item The next $n$ lines each contain three integers $u_i$, $t_i$, and $l_i$ ($1 \leq u_i \leq 10^9$, $0 \leq t_i \leq 10^9$, $0 \leq l_i \leq 10^5$).  
+\end{itemize}
+
+\section*{Output}
+Print the indices of the posts (1-based, in input order) in the order they \textbf{first appear} in the feed.  
+If a post never appears, it should not be printed.
+
+\section*{Subtasks}
+\begin{center}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
+\hline
+1 & $n \leq 100$, $k = 1$ & 20 \\
+\hline
+2 & $n \leq 2000$, $k \leq 10$ & 20 \\
+\hline
+3 & $n \leq 10^5$, $k \leq 100$ & 30 \\
+\hline
+4 & No additional constraints & 30 \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section*{Sample 1}
+\subsection*{Input}
+\begin{verbatim}
+5 2
+10 1 5
+7 2 5
+3 2 8
+5 3 5
+2 5 10
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+1 3 2 4 5
+\end{verbatim}
+
+\subsection*{Explanation}
+\begin{itemize}
+    \item At $t=1$, post 1 appears.  
+    \item At $t=2$, posts 2 and 3 are available. Post 3 has more likes, so it enters; post 2 also enters while post 1 is pushed out.  
+    \item At $t=3$, post 4 joins.  
+    \item At $t=5$, post 5 (10 likes) pushes out post 2.  
+\end{itemize}
+
+The order of first appearance is: 1, 3, 2, 4, 5.  
+
+\section*{Sample 2}
+\subsection*{Input}
+\begin{verbatim}
+4 2
+1 1 100
+2 2 50
+3 3 100
+4 4 200
+\end{verbatim}
+
+\subsection*{Output}
+\begin{verbatim}
+1 2 3 4
+\end{verbatim}
+
+\subsection*{Explanation}
+\begin{itemize}
+    \item At $t=1$, post 1 appears.  
+    \item At $t=2$, post 2 enters with lower likes but fills the empty slot.  
+    \item At $t=3$, post 3 (likes $=100$) replaces post 2 (likes $=50$).  
+    \item At $t=4$, post 4 (likes $=200$) pushes out post 1.  
+\end{itemize}
+
+Final order: 1, 2, 3, 4. Post 2 never reappears after being pushed out, even though newer posts arrive.  
+
+\vfill
+\begin{center}
+    \rule{0.8\textwidth}{0.4pt} \\[0.5em]
+    \textit{End of Problem 3}
+\end{center}
+
+\end{document}

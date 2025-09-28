@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Codeferno}
+\rhead{Rectangle}
+\cfoot{\thepage}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\begin{document}
+
+\ifdefined\BOOKLET
+  \pagestyle{empty}
+\fi
+
+\begin{center}
+    {\LARGE \textbf{Rectangle}} \\[0.5em]
+    {Problem ID: rectangle} \\[1em]
+    \rule{\textwidth}{0.4pt}
+\end{center}
+
+\vspace{1em}
+
+\section*{Problem Statement}
+You are given two integers $h$ and $w$, representing the height and width of a rectangle.  
+
+Your task is to print a rectangle of $h$ rows and $w$ columns, where:
+\begin{itemize}
+  \item The border of the rectangle is made up of \texttt{*} characters.  
+  \item The inner cells (not on the border) are filled with \texttt{-} characters.  
+\end{itemize}
+
+If the height or width is $1$, then the entire row or column is considered part of the border.
+
+\section*{Input}
+A single line containing two integers $h$ and $w$ ($1 \leq h, w \leq 1000$).
+
+\section*{Output}
+Output $h$ lines, each containing $w$ characters, forming the rectangle as described.
+
+\section*{Subtasks}
+\begin{center}
+\begin{tabularx}{\textwidth}{|c|X|c|}
+\hline
+\textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
+\hline
+1 & No additional constraints. & 100 \\
+\hline
+\end{tabularx}
+\end{center}
+
+\section*{Sample Input 1}
+\begin{verbatim}
+3 4
+\end{verbatim}
+
+\section*{Sample Output 1}
+\begin{verbatim}
+****
+*--*
+****
+\end{verbatim}
+
+\section*{Sample Input 2}
+\begin{verbatim}
+1 5
+\end{verbatim}
+
+\section*{Sample Output 2}
+\begin{verbatim}
+*****
+\end{verbatim}
+
+\section*{Sample Input 3}
+\begin{verbatim}
+4 1
+\end{verbatim}
+
+\section*{Sample Output 3}
+\begin{verbatim}
+*
+*
+*
+*
+\end{verbatim}
+
+\vfill
+\begin{center}
+    \rule{0.8\textwidth}{0.4pt} \\[0.5em]
+    \textit{End of Problem 1}
+\end{center}
+
+\end{document}

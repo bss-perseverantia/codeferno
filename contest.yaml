@@ -3,7 +3,7 @@ description: "Codeferno"
 tasks:
   - "bus"
   - "expo"
-  - "tree"
+  - "feed"
 users:
 - username: avighna
   password: laira
@@ -28,4 +28,23 @@ users:
 - username: P18
   password: EuroP18*2025
   ip: null
+- username: aaravk
+  password: 1234
+  ip: null
+- username: oviyang
+  password: oviyan
+  ip: null
+- username: rsoul
+  password: harleen
+  ip: null
+- username: tester1
+  password: test1
+- username: tester2
+  password: test2
+- username: tester3
+  password: test3
+- username: tester4
+  password: test4
+- username: tester5
+  password: test5
 token_mode: disabled

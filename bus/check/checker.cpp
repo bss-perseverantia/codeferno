@@ -72,6 +72,6 @@ int main(int argc, char *argv[]) {
   }
 
   cerr << "Output is correct\n";
-  cout << "0.0\n";
+  cout << "1.0\n";
   return 0;
 }

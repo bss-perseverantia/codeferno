@@ -11,7 +11,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{Codeferno}
-\rhead{Simple Exponentiation}
+\rhead{Water Bottles}
 \cfoot{\thepage}
 
 \titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
@@ -24,28 +24,25 @@
 \fi
 
 \begin{center}
-    {\LARGE \textbf{Simple Exponentiation}} \\[0.5em]
-    {Problem ID: expo} \\[1em]
+    {\LARGE \textbf{Water Bottles}} \\[0.5em]
+    {Problem ID: bottles} \\[1em]
     \rule{\textwidth}{0.4pt}
 \end{center}
 
 \vspace{1em}
 
 \section*{Problem Statement}
-You are given $t$ test cases.  
-In each test case, you are given three integers: $a$, $b$, and $m$.  
-
-Your task is to compute $a^b \bmod m$, i.e., the remainder when $a$ raised to the power $b$ is divided by $m$.
+You have $N$ bottles, where the $i$-th bottle can hold $a_i$ millilitres of water.  
+Your task is to determine the \textbf{total capacity} of all the bottles combined.
 
 \section*{Input}
 \begin{itemize}
-    \item The first line contains a single integer $t$ ($1 \le t \le 10^5$) — the number of test cases.  
-    \item Each of the next $t$ lines contains three space-separated integers $a$, $b$, and $m$ ($1 \le a, b, m \le 10^9$).  
+    \item The first line contains an integer $N$ ($1 \leq N \leq 1000$), the number of bottles.  
+    \item The second line contains $N$ integers $a_1, a_2, \ldots, a_N$ ($0 \leq a_i \leq 10^4$), the capacities of the bottles.  
 \end{itemize}
 
 \section*{Output}
-Print $t$ lines.  
-For each test case, output a single integer — the value of $a^b \bmod m$.
+Print a single integer: the total capacity of all $N$ bottles.
 
 \section*{Subtasks}
 \begin{center}
@@ -53,13 +50,11 @@ For each test case, output a single integer — the value of $a^b \bmod m$.
 \hline
 \textbf{Subtask} & \textbf{Constraints} & \textbf{Points} \\
 \hline
-1 & $b \leq 100$ & 10 \\
+1 & We will only test the provided sample inputs. & 10 \\
 \hline
-2 & $b \leq 10^5$ & 20 \\
+2 & $N \leq 100$, $a_i \leq 100$ & 30 \\
 \hline
-3 & $b$ is a power of $2$ & 30 \\
-\hline
-4 & No additional constraints & 40 \\
+3 & $N \leq 1000$, $a_i \leq 10^4$ & 60 \\
 \hline
 \end{tabularx}
 \end{center}
@@ -67,29 +62,35 @@ For each test case, output a single integer — the value of $a^b \bmod m$.
 \section*{Sample Input 1}
 \begin{verbatim}
 3
-2 5 100
-3 10 50
-10 9 6
+2 5 7
 \end{verbatim}
 
 \section*{Sample Output 1}
 \begin{verbatim}
-32
-49
-4
+14
 \end{verbatim}
 
 \section*{Explanation for Sample 1}
-\begin{itemize}
-  \item $2^5 = 32$, and $32 \bmod 100 = 32$  
-  \item $3^{10} = 59049$, and $59049 \bmod 50 = 49$  
-  \item $10^9 = 1000000000$, and $1000000000 \bmod 6 = 4$  
-\end{itemize}
+The bottles can hold $2 + 5 + 7 = 14$ millilitres in total.
+
+\section*{Sample Input 2}
+\begin{verbatim}
+5
+0 0 0 0 0
+\end{verbatim}
+
+\section*{Sample Output 2}
+\begin{verbatim}
+0
+\end{verbatim}
+
+\section*{Explanation for Sample 2}
+All bottles are empty, so the total is $0$.
 
 \vfill
 \begin{center}
     \rule{0.8\textwidth}{0.4pt} \\[0.5em]
-    \textit{End of Problem 2}
+    \textit{End of Problem 1}
 \end{center}
 
 \end{document}
