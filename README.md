@@ -12,4 +12,4 @@ This repository contains Codeferno's CMS configuration files, test cases, proble
 - `bottles`
 - `expo`
 
-Also, the script `make_booklet.pdf` creates the final problemset booklet, containing the introduction documents, and the three problems.
+Also, the script `make_booklet.py` creates the final problemset booklet, containing the introduction documents, and the three problems.
