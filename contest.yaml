@@ -1,8 +1,8 @@
 name: "Codeferno"
 description: "Codeferno"
 tasks:
+  - "neighbours"
   - "bus"
-  - "expo"
   - "feed"
 users:
 - username: avighna
