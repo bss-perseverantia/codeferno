@@ -54,7 +54,7 @@ def create_page_number_overlay(page_num, width=float(A4[0]), height=float(A4[1])
 
 def main():
     sources = [
-        Path("cover.tex"),
+        # Path("cover.tex"),
         Path("intro.tex"),
         Path("sample.tex"),
         Path("neighbours/statement/statement.tex"),
@@ -86,11 +86,11 @@ def main():
             width = float(page.mediabox.width)
             height = float(page.mediabox.height)
 
-            if i == 0:  # cover, no page number
-                overlay = create_page_number_overlay(None, width, height)
-            else:
-                page_counter += 1
-                overlay = create_page_number_overlay(page_counter, width, height)
+            # if i == 0:  # cover, no page number
+                # overlay = create_page_number_overlay(None, width, height)
+            # else:
+            page_counter += 1
+            overlay = create_page_number_overlay(page_counter, width, height)
 
             # Merge overlay
             new_page = PageObject.create_blank_page(width=width, height=height)
